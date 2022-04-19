@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+which aptitude || exit 1
+aptitude install linux-libc-dev binutils-bpf gcc-bpf libbpf-dev libbpf-tools libpcap-dev bpftool m4 llvm clang libelf-dev libbpf-dev gcc-multilib -y
+wget https://github.com/xdp-project/xdp-tools/releases/download/v1.2.3/xdp-tools-1.2.3.tar.gz
+tar xzvf xdp-tools-1.2.3.tar.gz
+cd xdp-tools-1.2.3
+make
+make install
+make clean
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/:/usr/includes/x86_64-linux-gnu
+cd ..
+wget https://github.com/kris-nova/boopkit/archive/refs/tags/v1.2.0.tar.gz
+tar xzvf v1.2.0.tar.gz
+cd boopkit-1.2.0
+make
+make install
+make clean
