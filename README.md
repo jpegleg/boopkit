@@ -185,6 +185,11 @@ NCATLISTENPORT="3545"
 python -c "import pty; pty.spawn('/bin/bash')"
 ```
 
+### Detection with no extra tools
+
+```dmesg | grep bpf | grep "\!$"```
+
+
 ### References
 
  - [Tracepoints with BPF](https://lwn.net/Articles/683504/)
