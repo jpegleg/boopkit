@@ -189,6 +189,7 @@ python -c "import pty; pty.spawn('/bin/bash')"
 
 ```dmesg | grep "bpf.*\!$"```
 
+The potential memory corruption is not insignificant, observed prevention of shutdown and normal root shell! 
 
 ### References
 
