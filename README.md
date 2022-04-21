@@ -187,7 +187,7 @@ python -c "import pty; pty.spawn('/bin/bash')"
 
 ### Detection with no extra tools
 
-```dmesg | grep bpf | grep "\!$"```
+```dmesg | grep "bpf.*\!$"```
 
 
 ### References
